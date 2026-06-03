@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For My Special One</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="floating-lights"></div>
+
+  <main id="app">
+
+    <!-- PAGE 1 -->
+    <section class="page active page-unlock" id="page1">
+      <div class="romantic-card unlock-card">
+        <div class="mini-label">A birthday surprise</div>
+        <h1>For My Special One</h1>
+        <p class="soft-text">Made with love,<br>just for you.</p>
+        <p class="tiny-note">Take your time.<br>Some moments are worth opening slowly.</p>
+
+        <div class="unlock-area">
+          <input id="specialDate" type="text" placeholder="Enter today's special date">
+          <button onclick="checkSpecialDate()">Unlock ✨</button>
+        </div>
+        <p id="dateError" class="error-text"></p>
+      </div>
+    </section>
+
+    <!-- PAGE 2 -->
+    <section class="page page-letter" id="page2">
+      <div class="romantic-card letter-card">
+        <div class="cake-icon">🎂</div>
+        <div class="mini-label">Before you go further</div>
+        <h2>Happy Birthday, My Love</h2>
+        <p class="letter-text">
+          Today is not just your birthday, it is a reminder of how special your presence is in my life.
+          I made this little journey for you with love, care, and all the soft feelings that words sometimes cannot explain.
+        </p>
+        <p class="letter-text">
+          I hope every page makes you smile a little, remember us a little, and feel how deeply you are loved.
+        </p>
+        <button onclick="goToPage(3)">Continue Slowly ❤️</button>
+      </div>
+    </section>
+
+    <!-- PAGE 3 -->
+    <section class="page page-memory" id="page3">
+      <div class="memory-layout">
+        <div class="photo-polaroid">
+          <img src="images/memory-beginning.jpg" alt="Beginning Memory">
+          <span>Our beginning</span>
+        </div>
+        <div class="romantic-card memory-card">
+          <div class="mini-label">The beginning</div>
+          <h2>Where it quietly started</h2>
+          <p class="letter-text">
+            Some memories are simple, but they stay forever. That first little moment, the nervous smile,
+            the quiet feeling, and the beginning of something that slowly became close to my heart.
+          </p>
+          <p class="script-line">Every beginning becomes beautiful when it is remembered with love.</p>
+          <button onclick="goToPage(4)">Open Our Journey ✨</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4 -->
+    <section class="page page-journey" id="page4">
+      <div class="romantic-card journey-card">
+        <div class="mini-label">Moments that built us</div>
+        <h2>Our Beautiful Journey</h2>
+        <p class="soft-text">Some moments fade,<br>but some become part of our story forever.</p>
+
+        <div class="journey-collage">
+          <div class="journey-item hero">
+            <img src="images/journey-1.jpg" alt="The Day We Became Us">
+            <span>The Day We Became Us</span>
+          </div>
+          <div class="journey-item">
+            <img src="images/journey-2.jpg" alt="Blessings Around Us">
+            <span>Blessings Around Us</span>
+          </div>
+          <div class="journey-item">
+            <img src="images/journey-3.jpg" alt="Two Families One Celebration">
+            <span>Two Families, One Celebration</span>
+          </div>
+          <div class="journey-item">
+            <img src="images/journey-4.jpg" alt="People Who Made It Special">
+            <span>People Who Made It Special</span>
+          </div>
+          <div class="journey-item">
+            <img src="images/journey-5.jpg" alt="Sweet Moments Together">
+            <span>Sweet Moments Together</span>
+          </div>
+          <div class="journey-item floating">
+            <img src="images/journey-6.jpg" alt="A Little Happiness">
+            <span>A Little Happiness</span>
+          </div>
+        </div>
+
+        <p class="bottom-quote">
+          Every picture here holds a memory,<br>
+          and every memory holds a piece of us.
+        </p>
+
+        <button onclick="goToPage(5)">Continue ❤️</button>
+      </div>
+    </section>
+
+    <!-- PAGE 5 -->
+    <section class="page page-cake" id="page5">
+      <div class="cake-page-layout">
+        <div class="photo-polaroid cake-photo">
+          <img src="images/cake-hero.jpg" alt="Cake Cutting Memory">
+          <span>Sweet Moments Together</span>
+        </div>
+
+        <div class="romantic-card cake-card">
+          <div class="mini-label">Birthday moment</div>
+          <h2>Make A Wish, My Love 🎂</h2>
+          <p class="soft-text">
+            May your smile stay bright,<br>
+            your dreams stay big,<br>
+            and your heart stay happy.
+          </p>
+          <p class="soft-text small">
+            You deserve every beautiful thing<br>
+            life has to offer.
+          </p>
+
+          <div class="cake-scene" onclick="celebrate()">
+            <div class="candle-flame"></div>
+            <div class="candle-stick"></div>
+            <div class="big-cake">🎂</div>
+          </div>
+
+          <button onclick="celebrate()">Blow The Candles ✨</button>
+          <button class="secondary-btn" onclick="goToPage(6)">Open My Final Letter 💌</button>
+        </div>
+      </div>
+      <div id="confetti"></div>
+    </section>
+
+    <!-- PAGE 6 -->
+    <section class="page page-promise" id="page6">
+      <div class="promise-layout">
+        <div class="romantic-card final-card">
+          <div class="mini-label">My promise to you</div>
+          <h2>To My Special One</h2>
+          <p class="final-letter">
+            Happy Birthday ❤️
+          </p>
+          <p class="final-letter">
+            Thank you for being part of my life, for every laugh, every memory,
+            and every moment that became special because of you.
+          </p>
+          <p class="final-letter">
+            No matter where life takes us, I hope we continue creating beautiful memories together.
+          </p>
+          <p class="final-letter">
+            Today, I just want you to know how deeply appreciated, valued, and loved you are.
+          </p>
+          <p class="final-letter">
+            May this year bring you happiness, success, peace, and everything your heart wishes for.
+          </p>
+          <p class="signature">— Yours Always ♡</p>
+          <button onclick="goToPage(1)">Replay</button>
+        </div>
+
+        <div class="photo-polaroid final-photo">
+          <img src="images/final-photo.jpg" alt="Final Memory">
+          <span>Forever becoming</span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
